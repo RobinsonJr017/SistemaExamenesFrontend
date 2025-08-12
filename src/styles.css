@@ -1,7 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: #f5f5f5;
+ }
+
+ /* styles.css */
+mat-toolbar {
+    background-color: #005cbb !important; /* Azul de Material por defecto */
+    color: white !important;
+}
+
+/* Opcional: Estilos para los botones */
+.example-icon {
+    color: white !important;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.example-icon:hover {
+    color: #f4f3f6e8 !important;
+}
 
 .text-center{
     text-align: center;
@@ -43,4 +64,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mb10{
     margin-bottom: 20px !important;
+}
+
+.ml70{
+    margin-left: 70px !important;
 }
