@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit{
     "password" : ''
   }
 
-  constructor(private snack:MatSnackBar){}
+  constructor(private snack:MatSnackBar, private loginService:LoginService){}
 
   ngOnInit(): void {      
   }
@@ -37,6 +38,13 @@ export class LoginComponent implements OnInit{
       })
       return;
     }
-    console.log("Click en el boton de login");
+
+    this.loginService.generateToken(this.loginData).subscribe(
+      (data:any) => {
+        console.log(data);        
+      },(error) => {
+        console.log(error);
+      }
+    )
   }
 }
