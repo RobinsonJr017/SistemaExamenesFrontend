@@ -58,4 +58,8 @@ export class LoginService {
     let user = this.getUser();
     return user.authorities[0].authority;    
   }
+
+  public getCurrentUser(){
+    return this.http.get(`${baserUrl}/actual-usuario`);
+  }
 }
