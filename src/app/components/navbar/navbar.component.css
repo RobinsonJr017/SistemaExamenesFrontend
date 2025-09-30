@@ -1,3 +1,21 @@
 .example-spacer{
     flex: 1 1 auto;
 }
+
+.nav-item {
+  display: flex;
+  align-items: center; /* centra verticalmente */
+  gap: 3px;            /* espacio entre icono y texto */
+  font-size: 22px;     /* ajusta el tamaño del texto */
+  color: white;        /* asegura que se vea bien en el toolbar */
+  text-decoration: none;
+}
+
+.nav-item mat-icon {
+  font-size: 22px;     /* tamaño del icono */
+  vertical-align: middle;
+}
+
+.nav-item:hover{
+    color: #efefef;
+}

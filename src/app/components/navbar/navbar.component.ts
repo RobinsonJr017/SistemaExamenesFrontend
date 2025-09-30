@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { LoginService } from '../../services/login.service';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule, MatToolbarModule, MatIconModule, RouterLink],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, RouterLink, MatButtonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -15,7 +17,7 @@ export class NavbarComponent implements OnInit{
   isLoggedIn = false;
   user:any = null;
   
-  constructor(public login:LoginService){
+  constructor(public login:LoginService, private router: Router){
 
   }
 
@@ -30,8 +32,14 @@ export class NavbarComponent implements OnInit{
     )
   }
 
-  public logout(){
+  public logout(): void{
     this.login.logout();
-    window.location.reload();
+    //window.location.reload(); //opcion1
+    //this.router.navigate(['/login']); // 👈 en vez de reload
+    // Redirigir al home después de cerrar sesión
+    this.router.navigate(['/']).then(() => {
+      // Recargar para asegurar que todo se actualice
+      window.location.reload();
+    });
   }
 }

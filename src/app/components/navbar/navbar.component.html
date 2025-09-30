@@ -1,6 +1,8 @@
 <mat-toolbar color="primary">
     <a [routerLink] = "'/'"
-        mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        mat-icon-button 
+        class="example-icon" 
+        aria-label="Example icon-button with menu icon">
         <mat-icon>menu_book</mat-icon>
     </a>
     <span>Portal de Examenes </span>
@@ -8,32 +10,32 @@
     <a
         *ngIf="!isLoggedIn"
         [routerLink] = "'/login'" 
-        mat-icon-button 
-        class="example-icon favorite-icon" 
+        class="example-icon" 
         aria-label="Example icon-button with heart icon">
         Iniciar sesion
     </a>
     <a
         *ngIf="!isLoggedIn"
         [routerLink] = "'/signup'" 
-        mat-icon-button class="example-icon favorite-icon mr20 ml70" 
+        class="example-icon mr20 ml70" 
         aria-label="Example icon-button with heart icon">
         Registrar
     </a>
     <a
         *ngIf="isLoggedIn"
         (click) = "logout()"
-        style="margin-right: 50px;"
-        mat-icon-button class="example-icon favorite-icon" 
+        style="margin-right: 50px; cursor: pointer;"
+        class="nav-item" 
         aria-label="Example icon-button with heart icon">
+        <mat-icon>exit_to_app</mat-icon>
         Cerrar sesion
     </a>
-    <button
+    <span
         *ngIf="isLoggedIn && user"
         mat-button
-        style="margin-right: 10px"
-        class="example-icon favorite-icon"
+        class="nav-item"
         aria-label="Example icon-button with heart icon">
-        {{ login.getUser().username }}
-  </button>
+        <mat-icon>person</mat-icon>
+        {{ user.username }}
+    </span>
 </mat-toolbar>
