@@ -34,6 +34,7 @@
         *ngIf="isLoggedIn && user"
         mat-button
         class="nav-item"
+        routerLink="/admin/profile"
         aria-label="Example icon-button with heart icon">
         <mat-icon>person</mat-icon>
         {{ user.username }}

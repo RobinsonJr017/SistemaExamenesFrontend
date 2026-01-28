@@ -1,5 +1,5 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<mat-card style="margin-left: 10px;">
+<mat-card style="margin-left: 20px;">
     <h4>Detalles del perfil</h4>
     <mat-card-content>
         <div class="bootstrap-wrapper">
@@ -10,30 +10,30 @@
                     alt="profile"
                     class="profile-image">
 
-                    <h5 class="mt20">Robinson Lopez Sanclemente</h5>
+                    <h5 class="mt20">{{ user.nombre }} {{ user.apellido }}</h5>
                 </div>
                 <div class="row">
                     <div class="col-md-10 ofset-md-1">
                         <table class="table text-center">
                             <tr>
                                 <td>Nombre de Usuario</td>
-                                <td>Robinson Lopez Sanclemente</td>
+                                <td>{{ user.username }}</td>
                             </tr>
                             <tr>
                                 <td>ID</td>
-                                <td>171617</td>
+                                <td>{{ user.id }}</td>
                             </tr>
                             <tr>
                                 <td>Telefono</td>
-                                <td>3244232786</td>
+                                <td>{{ user.telefono }}</td>
                             </tr>
                             <tr>
                                 <td>Rol</td>
-                                <td>Administrador</td>
+                                <td>{{ user.authorities[0].authority }}</td>
                             </tr>
                             <tr>
                                 <td>Estado</td>
-                                <td>Activo</td>
+                                <td>{{ user.enabled ? "Activo" : "No Activo" }}</td>
                             </tr>
                         </table>
                     </div>

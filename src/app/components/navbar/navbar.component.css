@@ -9,6 +9,7 @@
   font-size: 22px;     /* ajusta el tamaño del texto */
   color: white;        /* asegura que se vea bien en el toolbar */
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-item mat-icon {
