@@ -7,9 +7,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { CategoriaService } from '../../../services/categoria.service';
 import Swal from 'sweetalert2';
 import { MatIcon } from "@angular/material/icon";
+import { RouterLink } from "@angular/router";
 @Component({
   selector: 'app-view-categorias',
-  imports: [MatCard, MatList, MatListSubheaderCssMatStyler, MatListItem, CommonModule, MatButton, MatDividerModule, MatIcon],
+  imports: [MatCard, MatList, MatListSubheaderCssMatStyler, MatListItem, CommonModule, MatButton, MatDividerModule, MatIcon, RouterLink],
   templateUrl: './view-categorias.component.html',
   styleUrl: './view-categorias.component.css'
 })
