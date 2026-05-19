@@ -9,6 +9,7 @@
                     [(ngModel)] = "examenData.titulo"
                     type="text"
                     name="titulo"
+                    required
                     placeholder="Digite el titulo"
                     matInput>
                 </mat-form-field>
@@ -48,7 +49,7 @@
                     </div>
                 </div>
 
-                <mat-slide-toggle class="mt20" [(ngModel)] = "examenData.activo" [checked]="false" color="primary">
+                <mat-slide-toggle class="mt20" name="activo" [(ngModel)] = "examenData.activo" [checked]="false" color="primary">
                     Estado de publicacion
                 </mat-slide-toggle>
 
