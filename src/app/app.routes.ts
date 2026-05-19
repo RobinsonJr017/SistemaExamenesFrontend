@@ -13,6 +13,7 @@ import { AddCategoriaComponent } from './pages/admin/add-categoria/add-categoria
 import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes.component';
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
 export const routes: Routes = [
     {
         path: '',
@@ -57,6 +58,10 @@ export const routes: Routes = [
             {
                 path:'add-examen',
                 component:AddExamenComponent
+            },
+            {
+                path:'examen/:examenId',
+                component:ActualizarExamenComponent
             }
         ]
     },

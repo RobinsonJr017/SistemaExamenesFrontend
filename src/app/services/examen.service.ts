@@ -16,4 +16,8 @@ export class ExamenService {
   public agregarExamen(examen:any){
     return this.http.post(`${baserUrl}/examen/`, examen)
   }
+
+  public eliminarExamen(examenId:any){
+    return this.http.delete(`${baserUrl}/examen/${examenId}`)
+  }
 }
