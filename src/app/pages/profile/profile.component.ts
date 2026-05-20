@@ -3,11 +3,11 @@ import {MatListModule} from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCard, MatCardContent, MatCardActions } from "@angular/material/card";
 import { LoginService } from '../../services/login.service';
-
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-profile',
-  imports: [MatListModule, MatButtonModule, MatCard, MatCardContent, MatCardActions],
+  imports: [MatListModule, MatButtonModule, MatCard, MatCardContent, MatCardActions, MatCardModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })

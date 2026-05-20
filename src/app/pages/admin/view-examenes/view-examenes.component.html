@@ -1,6 +1,6 @@
 <mat-card class="mt10" *ngFor = "let e of examenes">
     <mat-card-header>
-        <div mat-card-avatar class="example header-image"></div>
+        <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>
                 {{ e.titulo }}
             </mat-card-title>
@@ -15,7 +15,7 @@
             <button mat-stroked-button color="primary" class="ml20">Preguntas {{ e.numeroDePreguntas }} </button>
             <button [routerLink]="'/admin/examen/'+e.examenId" mat-flat-button color="primary" class="ml20">Actualizar</button>
             <button mat-flat-button color="primary" class="ml20">Intentos</button>
-            <button mat-flat-button color="warn" class="ml10" (click)="eliminarExamen(e.examenId)">Eliminar</button>
+            <button mat-raised-button color="warn" class="ml10" (click)="eliminarExamen(e.examenId)">Eliminar</button>
         </mat-card-actions>
     </mat-card-content>
 </mat-card>
