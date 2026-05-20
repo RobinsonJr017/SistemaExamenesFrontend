@@ -4,17 +4,17 @@ import { ExamenService } from '../../../services/examen.service';
 import { CategoriaService } from '../../../services/categoria.service';
 import { FormsModule } from "@angular/forms";
 import { MatCard } from "@angular/material/card";
-import { MatFormField } from "@angular/material/form-field";
+import { MatFormField,MatLabel } from "@angular/material/form-field";
 import { MatInput } from "@angular/material/input";
 import { MatSelectModule } from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
 import { MatButton } from "@angular/material/button"; 
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-actualizar-examen',
-  imports: [NgIf, FormsModule, MatCard, MatFormField, MatInput, MatSelectModule, MatSlideToggleModule, MatButton],
+  imports: [NgIf, NgFor, FormsModule, MatCard, MatFormField, MatLabel, MatInput, MatSelectModule, MatSlideToggleModule, MatButton],
   templateUrl: './actualizar-examen.component.html',
   styleUrl: './actualizar-examen.component.css'
 })

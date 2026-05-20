@@ -9,10 +9,12 @@ import { CategoriaService } from '../../../services/categoria.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { MatFormFieldModule } from "@angular/material/form-field"; // <-- Cambiado a Module
+import { MatInputModule } from "@angular/material/input";
 
 @Component({
   selector: 'app-add-categoria',
-  imports: [MatCardContent, MatCard, MatFormField, MatInput, MatLabel, MatButton, FormsModule],
+  imports: [MatCardContent, MatCard, MatFormField, MatInput, MatLabel, MatButton, FormsModule, MatFormFieldModule, MatInputModule],
   templateUrl: './add-categoria.component.html',
   styleUrl: './add-categoria.component.css'
 })
@@ -23,7 +25,11 @@ export class AddCategoriaComponent implements OnInit{
     descripcion : ''
   }
 
-  constructor(private categoriaService:CategoriaService, private snack:MatSnackBar, private router:Router){}
+  constructor(
+    private categoriaService:CategoriaService, 
+    private snack:MatSnackBar, 
+    private router:Router
+  ){}
 
   ngOnInit(): void {
       
