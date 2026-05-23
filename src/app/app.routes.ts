@@ -14,6 +14,7 @@ import { ViewExamenesComponent } from './pages/admin/view-examenes/view-examenes
 import { AddExamenComponent } from './pages/admin/add-examen/add-examen.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { ActualizarExamenComponent } from './pages/admin/actualizar-examen/actualizar-examen.component';
+import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-preguntas/view-examen-preguntas.component';
 export const routes: Routes = [
     {
         path: '',
@@ -62,6 +63,10 @@ export const routes: Routes = [
             {
                 path:'examen/:examenId',
                 component:ActualizarExamenComponent
+            },
+            {
+                path:'ver-preguntas/:examenId/:titulo',
+                component:ViewExamenPreguntasComponent
             }
         ]
     },
