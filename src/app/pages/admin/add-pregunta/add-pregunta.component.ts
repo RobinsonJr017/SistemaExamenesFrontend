@@ -77,4 +77,5 @@ export class AddPreguntaComponent implements OnInit{
       }
     )
   }
+
 }
