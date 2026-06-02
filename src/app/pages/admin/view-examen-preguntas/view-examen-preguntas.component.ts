@@ -5,11 +5,12 @@ import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatDivider } from "@angular/material/divider";
 import { MatCard, MatCardContent } from '@angular/material/card'; // <-- Importamos los subcomponentes específicos
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatButton } from "@angular/material/button";
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-view-examen-preguntas',
-  imports: [MatCardModule, CommonModule, MatDivider, MatCardContent, MatCard],
+  imports: [MatCardModule, CommonModule, MatDivider, MatCardContent, MatCard, MatButton, RouterLink],
   templateUrl: './view-examen-preguntas.component.html',
   styleUrl: './view-examen-preguntas.component.css'
 })

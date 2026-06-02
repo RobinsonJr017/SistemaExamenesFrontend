@@ -6,9 +6,17 @@
             
             <mat-card *ngIf="preguntas.length === 0" class="mt20">
                 <mat-card-content>
-                    <p style="text-align: center; color: #666;">No hay preguntas registradas para este examen.</p>
+                    <p style="text-align: center;">No hay preguntas registradas para este examen.</p>
                 </mat-card-content>
             </mat-card>
+
+            <div class="container text-center">
+                <button mat-raised-button 
+                color="primary"
+                [routerLink]="'/admin/add-pregunta/'+examenId+'/'+titulo">
+                Agregar Pregunta
+                </button>
+            </div>
 
             <mat-card *ngFor="let p of preguntas; let i = index" class="mt20">
                 <mat-card-content>
@@ -34,7 +42,7 @@
                             </div>
                         </div>
                         <mat-divider></mat-divider>
-                        <p class="mt20" style="color: green;">
+                        <p class="mt20">
                             <b>Respuesta correcta : {{ p.respuesta }}</b>
                         </p>
                     </div>
