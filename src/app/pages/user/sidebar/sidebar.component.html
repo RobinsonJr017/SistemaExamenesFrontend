@@ -3,7 +3,7 @@
 
     <div mat-subheader class = "menu-title">Menu</div>
 
-    <button mat-list-item routerLink = "/user-dasboard">
+    <button mat-list-item routerLink = "/user-dasboard/0">
       <mat-icon matListItemIcon>home</mat-icon>
       <span matListItemTitle>Inicio</span>
     </button>
@@ -13,7 +13,7 @@
       <span matListItemTitle>Exámenes</span>
     </button>
 
-    <button mat-list-item *ngFor = "let c of categorias">
+    <button [routerLink] = "'/user-dashboard/'+c.categoriaId" mat-list-item *ngFor = "let c of categorias">
       <mat-icon matListItemIcon>account_circle</mat-icon>
       <span matListItemTitle>{{ c.titulo }}</span>
     </button>
