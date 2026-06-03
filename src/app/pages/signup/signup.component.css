@@ -1,0 +1,17 @@
+/* Estilos para igualar al signup */
+.bootstrap-wrapper {
+    padding: 20px;
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.container.text-center {
+    margin-bottom: 20px;
+}
+
+.form-card {
+    padding: 20px;
+}

@@ -1,0 +1,22 @@
+<mat-card class="sidebar-card">
+  <mat-action-list>
+
+    <div mat-subheader class = "menu-title">Menu</div>
+
+    <button mat-list-item routerLink = "/user-dasboard">
+      <mat-icon matListItemIcon>home</mat-icon>
+      <span matListItemTitle>Inicio</span>
+    </button>
+
+    <button mat-list-item>
+      <mat-icon matListItemIcon>quiz</mat-icon>
+      <span matListItemTitle>Exámenes</span>
+    </button>
+
+    <button mat-list-item *ngFor = "let c of categorias">
+      <mat-icon matListItemIcon>account_circle</mat-icon>
+      <span matListItemTitle>{{ c.titulo }}</span>
+    </button>
+
+  </mat-action-list>
+</mat-card>

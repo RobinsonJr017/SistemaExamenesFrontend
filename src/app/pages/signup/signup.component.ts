@@ -7,11 +7,12 @@ import { FormsModule } from '@angular/forms'; // Añade este import
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import  Swal from 'sweetalert2';
+import { MatCard } from "@angular/material/card";
 
 
 @Component({
   selector: 'app-signup',
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule, MatSnackBarModule],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule, MatSnackBarModule, MatCard],
   standalone: true,
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
@@ -40,7 +41,7 @@ export class SignupComponent implements OnInit {
     
     this.userService.anadirUsuario(this.user).subscribe({
       next: (data: any) => {
-        Swal.fire('Usuario guardado', 'Usuario registrado con éxito', 'success');
+        Swal.fire('Usuario guardado', 'Usuario registrado con éxito en el sistema', 'success');
       },
       error: (error) => {
         console.error(error);
