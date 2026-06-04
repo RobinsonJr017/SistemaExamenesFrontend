@@ -2,3 +2,16 @@
     background-image: url('/assets/prueba.png');
     background-size: cover;
 }
+
+.titulo-form {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 16px;
+}
+
+.titulo-form1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+}
