@@ -18,6 +18,7 @@ import { ViewExamenPreguntasComponent } from './pages/admin/view-examen-pregunta
 import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.component';
 import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
+import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
 export const routes: Routes = [
     {
         path: '',
@@ -89,6 +90,10 @@ export const routes: Routes = [
             {
                 path:':catId',
                 component:LoadExamenComponent
+            },
+            {
+                path:':instrucciones/:examenId',
+                component:InstruccionesComponent
             }
         ]
     }

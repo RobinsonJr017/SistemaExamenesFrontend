@@ -1,0 +1,54 @@
+/* Mantiene el diseño exacto de los encabezados de Admin */
+.titulo-form {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: normal !important;
+}
+
+.subtitulo-form {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+/* Control para los H1 internos sin cambiar la etiqueta */
+.examen-titulo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 30px; /* Alineado con el mat-card-content (ml30) */
+    color: #333;
+}
+
+/* Tipografías de los textos y listas */
+.examen-descripcion {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.lista-instrucciones {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #444;
+    line-height: 2; /* Espaciado limpio entre ítems */
+    margin-left: 35px;
+    margin-bottom: 20px;
+}
+
+/* Clases de utilidad */
+.p20 {
+    padding: 20px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}

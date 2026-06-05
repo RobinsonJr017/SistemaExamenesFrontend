@@ -5,10 +5,11 @@ import { NgFor, NgIf } from '@angular/common';
 import { MatCard, MatCardHeader, MatCardContent, MatCardAvatar } from "@angular/material/card";
 import { MatCardModule } from '@angular/material/card';
 import { MatButton } from "@angular/material/button"; // Para mat-card-subtitle
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-load-examen',
-  imports: [NgFor, NgIf, MatCardModule, MatCard, MatCardHeader, MatCardContent, MatCardAvatar, MatButton],
+  imports: [NgFor, NgIf, MatCardModule, MatCard, MatCardHeader, MatCardContent, 
+    MatCardAvatar, MatButton, RouterLink],
   templateUrl: './load-examen.component.html',
   styleUrl: './load-examen.component.css'
 })
