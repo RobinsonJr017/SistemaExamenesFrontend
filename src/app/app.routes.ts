@@ -19,6 +19,7 @@ import { AddPreguntaComponent } from './pages/admin/add-pregunta/add-pregunta.co
 import { ActualizarPreguntaComponent } from './pages/admin/actualizar-pregunta/actualizar-pregunta.component';
 import { LoadExamenComponent } from './pages/user/load-examen/load-examen.component';
 import { InstruccionesComponent } from './pages/user/instrucciones/instrucciones.component';
+import { StartComponent } from './pages/user/start/start.component';
 export const routes: Routes = [
     {
         path: '',
@@ -96,5 +97,10 @@ export const routes: Routes = [
                 component:InstruccionesComponent
             }
         ]
+    },
+    {
+        path:':start/:examenId',
+        component:StartComponent,
+        canActivate:[normalGuard]
     }
 ];
