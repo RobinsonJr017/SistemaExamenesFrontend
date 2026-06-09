@@ -1,0 +1,104 @@
+/* --- ESTILOS DE FUENTES Y TEXTOS --- */
+.titulo-en-curso {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: normal !important;
+    color: #333;
+}
+
+.contenido-pregunta {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.opcion-item {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+    color: #444;
+}
+
+/* --- TARJETAS DE PREGUNTAS --- */
+.tarjeta-pregunta {
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05) !important;
+    border-radius: 8px !important;
+}
+
+/* --- SECCIÓN DE RESULTADOS (SOLUCIÓN DE CENTRADO) --- */
+.contenedor-resultado {
+    display: flex !important;
+    justify-content: center !important; /* Centra horizontalmente */
+    align-items: center !important;
+    min-height: 60vh; /* Le da una altura para que no quede pegado arriba */
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.columna-resultado {
+    float: none !important;
+    margin: 0 auto !important; /* Fuerza el centrado en Bootstrap */
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.tarjeta-resultado {
+    width: 100% !important;
+    max-width: 500px !important; /* Evita que se estire demasiado y se vea pro */
+    border-radius: 10px !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.header-resultado {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.titulo-resultado {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 500 !important;
+    color: #333;
+}
+
+.puntos-conseguidos {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    color: #2e7d32 !important; /* Color verde éxito */
+    font-weight: bold !important;
+    margin-bottom: 10px;
+}
+
+.respuestas-correctas {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    color: #1565c0 !important; /* Color azul informativo */
+    font-weight: normal !important;
+}
+
+.contenedor-acciones {
+    justify-content: center !important;
+    display: flex !important;
+    margin-top: 15px !important;
+}
+
+/* --- BOTONES --- */
+.boton-enviar, .boton-imprimir {
+    font-family: 'Roboto', sans-serif !important;
+    padding: 10px 24px !important;
+    font-size: 15px !important;
+}
+
+/* --- UTILIDADES --- */
+.p20 {
+    padding: 20px !important;
+}
+.mt20 {
+    margin-top: 20px !important;
+}
+.mt10 {
+    margin-top: 10px !important;
+}
+.mb20 {
+    margin-bottom: 20px !important;
+}
