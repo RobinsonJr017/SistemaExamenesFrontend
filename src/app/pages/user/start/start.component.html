@@ -40,7 +40,22 @@
                 </div>
             </div>
             <div class="col-md-2">
-                </div>
+                <mat-card style="margin-top: 70px;">
+                    <mat-card-header>
+                        <mat-card-title>
+                            Temporizador
+                        </mat-card-title>
+                        <mat-card-subtitle>
+                            El cuestionario se enviara automaticamente cuando el temporizador llegue 0:0
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h1 class="text-center">{{ obtenerHoraFormateada() }}</h1>
+                        <mat-spinner mode="determinate" style="margin: auto;" [value] = "(timer/(this.preguntas.length * 2 * 60)* 100)">
+                        </mat-spinner>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>
@@ -60,6 +75,7 @@
                 </mat-card-content>
                 <mat-card-actions class="text-center contenedor-acciones">
                     <button mat-raised-button color="primary" class="boton-imprimir">Imprimir</button>
+                    <button mat-raised-button color="accent" [routerLink] = "'/user-dashboard/0'" class="boton-imprimir">Inicio</button>
                 </mat-card-actions>
             </mat-card>
         </div>
