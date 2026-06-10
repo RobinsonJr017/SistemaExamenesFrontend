@@ -1,14 +1,23 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; // ← Importar esto
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'; 
 import { routes } from './app.routes';
-import { authInterceptorProviders } from './services/auth.interceptor'; // ← Ajusta la ruta según donde tengas tu interceptor
+import { authInterceptorProviders } from './services/auth.interceptor'; 
+
+// 1. Importas los dos módulos de la librería que instalaste
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
-    provideHttpClient(withInterceptorsFromDi()), // ← Agregar esta línea
-    authInterceptorProviders, // ← Agregar tu interceptor
+    provideHttpClient(withInterceptorsFromDi()), 
+    authInterceptorProviders, 
+    
+    // 2. Registras la librería dentro de importProvidersFrom para Standalone
+    importProvidersFrom(
+      NgxUiLoaderModule,
+      NgxUiLoaderHttpModule // Este se encarga de mostrar el spinner automáticamente en cada petición HTTP
+    )
   ]
 };
