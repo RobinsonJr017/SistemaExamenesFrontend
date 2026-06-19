@@ -1,1 +1,59 @@
-<p>Bienvenido al panel del admin</p>
+<mat-card class="welcome-card mt20">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card-header class="welcome-header">
+          <div mat-card-avatar class="admin-avatar">
+            <mat-icon>admin_panel_settings</mat-icon>
+          </div>
+          <mat-card-title class="main-title">Bienvenido Administrador</mat-card-title>
+          <mat-card-subtitle class="main-subtitle">Panel de Control y Gestión del Campus</mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content class="welcome-content mt20">
+          <p class="lead-text">
+            Desde este panel tienes el control total del sistema de evaluaciones. Puedes estructurar la academia gestionando el contenido educativo de manera jerárquica.
+          </p>
+          
+          <mat-divider></mat-divider>
+          
+          <h2 class="section-title mt20">Resumen de Funciones Disponibles</h2>
+          
+          <div class="dashboard-grid">
+            <div class="stat-card">
+              <mat-icon class="icon-blue">category</mat-icon>
+              <h3>Categorías</h3>
+              <p>Crear y organizar las áreas de estudio del campus.</p>
+            </div>
+
+            <div class="stat-card">
+              <mat-icon class="icon-purple">quiz</mat-icon>
+              <h3>Exámenes</h3>
+              <p>Diseñar pruebas con límites de tiempo y puntajes máximos.</p>
+            </div>
+
+            <div class="stat-card">
+              <mat-icon class="icon-green">help_center</mat-icon>
+              <h3>Preguntas</h3>
+              <p>Gestionar el banco de preguntas y asignarlas a los exámenes.</p>
+            </div>
+          </div>
+
+          <mat-divider class="mt20"></mat-divider>
+          
+          <div class="checklist-section mt20">
+            <h3>Lista de Tareas Administrativas:</h3>
+            <ul class="custom-list">
+              <li><mat-icon class="check-icon">check_circle</mat-icon> Gestionar las categorías globales del sistema.</li>
+              <li><mat-icon class="check-icon">check_circle</mat-icon> Crear y actualizar exámenes parametrizados.</li>
+              <li><mat-icon class="check-icon">check_circle</mat-icon> Asignar exámenes a sus distintas categorías correspondientes.</li>
+              <li><mat-icon class="check-icon">check_circle</mat-icon> Gestionar reactivos y preguntas dinámicas.</li>
+              <li><mat-icon class="check-icon">check_circle</mat-icon> Asignar y balancear preguntas en cada examen activo.</li>
+            </ul>
+          </div>
+          
+        </mat-card-content>
+      </div>
+    </div>
+  </div>
+</mat-card>

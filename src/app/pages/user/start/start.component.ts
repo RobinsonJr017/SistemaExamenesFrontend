@@ -65,12 +65,12 @@ export class StartComponent implements OnInit{
   iniciarTemporizador(){
     let t = window.setInterval(() => {
       if(this.timer <= 0){
-        this.evaluarExamen();
-        clearInterval(t);
-      }else{
+        clearInterval(t); // Primero limpiamos el intervalo para frenar el reloj
+        this.evaluarExamen(); // Luego evaluamos
+      } else {
         this.timer --;
       }
-    },1000)
+    }, 1000)
   }
 
   prevenirElBotonDeRetroceso(){
@@ -99,14 +99,16 @@ export class StartComponent implements OnInit{
       (data:any) => {
         console.log(data);
         this.puntosConseguidos = data.puntosMaximos;
-        this.respuestasCorrectas = data.respuestasCorrectas;
+        this.respuestasCorrectas = data.respuestasCorrectas; // Validado con el backend corregido
         this.intentos = data.intentos;
         this.esEnviado = true;
       },
       (error) => {
         console.log(error);
+        Swal.fire('Error', 'No se pudo procesar la evaluación del examen', 'error');
       }
     )
+  
     /*this.esEnviado = true;
     this.preguntas.forEach((p:any) => {
       if(p.respuestaDada == p.respuesta){
@@ -123,7 +125,7 @@ export class StartComponent implements OnInit{
       console.log("Puntos conseguidos : " + this.puntosConseguidos);
       console.log("Intentos : " + this.intentos);
       console.log(this.preguntas);*/
-    }
+}
 
   obtenerHoraFormateada(){
     let mm = Math.floor(this.timer/60);

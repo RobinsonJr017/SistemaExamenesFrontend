@@ -29,11 +29,13 @@ export class PreguntaService {
     return this.http.get(`${baserUrl}/pregunta/${preguntaId}`);
   }
 
+  // CORRECCIÓN 1: Ruta correcta para el examen del estudiante (sin el "/todos")
   public listarPreguntasDelExamenParaLaPrueba(examenId:any){
-    return this.http.get(`${baserUrl}/pregunta/examen/todos/${examenId}`);
+    return this.http.get(`${baserUrl}/pregunta/examen/${examenId}`);
   }
 
+  // CORRECCIÓN 2: Cambiado a .post() para que coincida con el @PostMapping del backend
   public evaluarExamen(preguntas:any){
-    return this.http.get(`${baserUrl}/pregunta/evaluar-examen`,preguntas);
+    return this.http.post(`${baserUrl}/pregunta/evaluar-examen`, preguntas);
   }
 }
