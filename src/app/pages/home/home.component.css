@@ -1,0 +1,48 @@
+
+/* Tarjeta elegante estilo Material */
+.home-card {
+    border-radius: 16px !important;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Tipografías del título y subtítulo */
+.home-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.home-description {
+    font-size: 1.05rem;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Círculo sutil para el icono decorativo */
+.home-icon-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eff6ff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+}
+
+.home-icon-circle mat-icon {
+    font-size: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+    color: #3f51b5; /* Tono primario por defecto */
+}
+
+/* Ajuste visual del botón */
+.btn-inicio-custom {
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px;
+    border-radius: 8px !important;
+}

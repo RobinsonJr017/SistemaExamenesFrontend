@@ -1,104 +1,212 @@
-/* --- ESTILOS DE FUENTES Y TEXTOS --- */
+/* --- CONFIGURACIÓN GENERAL Y FUENTES --- */
+.container-examen {
+    padding: 20px 40px !important;
+}
+
 .titulo-en-curso {
     font-family: 'Roboto', sans-serif !important;
-    font-size: 24px !important;
-    font-weight: normal !important;
+    font-size: 26px !important;
+    font-weight: 500 !important;
+    color: #1a237e;
+    border-left: 5px solid #3f51b5;
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+/* --- TARJETAS LATERALES (Instrucciones / Reloj) --- */
+.tarjeta-lateral {
+    border-radius: 12px !important;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #e0e0e0 !important;
+}
+
+.titulo-seccion-lateral {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion-lateral h3, .titulo-seccion-lateral mat-card-title {
+    margin: 0 !important;
+    font-size: 18px !important;
     color: #333;
 }
 
+.lista-instrucciones {
+    padding-left: 20px;
+    color: #555;
+}
+
+.lista-instrucciones li {
+    margin-bottom: 8px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Temporizador */
+.header-reloj {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 16px 16px 0 16px !important;
+}
+
+.subtitle-reloj {
+    font-size: 12px !important;
+    text-align: center;
+    margin-top: 5px !important;
+}
+
+.content-reloj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px !important;
+}
+
+.hora-formateada {
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: #3f51b5;
+    margin: 15px 0 !important;
+}
+
+.spinner-tiempo {
+    margin: 10px auto;
+}
+
+/* --- TARJETAS DE PREGUNTAS Y RADIOS --- */
+.tarjeta-pregunta {
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06) !important;
+    border-radius: 12px !important;
+    margin-bottom: 20px;
+    border: 1px solid #f0f0f0;
+}
+
 .contenido-pregunta {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 16px !important;
-    color: #222;
+    font-size: 17px !important;
+    color: #2c3e50;
+    font-weight: 500;
     margin-bottom: 15px;
 }
 
-.opcion-item {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 14px !important;
-    color: #444;
+.numero-pregunta {
+    color: #3f51b5;
+    font-weight: bold;
+    margin-right: 5px;
 }
 
-/* --- TARJETAS DE PREGUNTAS --- */
-.tarjeta-pregunta {
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.05) !important;
-    border-radius: 8px !important;
+/* Grupo de Opciones Estilizadas */
+.grupo-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
 }
 
-/* --- SECCIÓN DE RESULTADOS (SOLUCIÓN DE CENTRADO) --- */
+.opcion-radio-item {
+    padding: 12px 16px !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+    font-size: 15px !important;
+}
+
+.opcion-radio-item:hover {
+    background-color: #f0f2ff;
+    border-color: #3f51b5;
+}
+
+/* --- SECCIÓN DE RESULTADOS --- */
 .contenedor-resultado {
     display: flex !important;
-    justify-content: center !important; /* Centra horizontalmente */
-    align-items: center !important;
-    min-height: 60vh; /* Le da una altura para que no quede pegado arriba */
-    width: 100% !important;
-    margin: 0 auto !important;
-}
-
-.columna-resultado {
-    float: none !important;
-    margin: 0 auto !important; /* Fuerza el centrado en Bootstrap */
-    display: flex !important;
     justify-content: center !important;
+    align-items: center !important;
+    min-height: 75vh;
+    width: 100% !important;
 }
 
 .tarjeta-resultado {
     width: 100% !important;
-    max-width: 500px !important; /* Evita que se estire demasiado y se vea pro */
-    border-radius: 10px !important;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1) !important;
+    max-width: 480px !important;
+    border-radius: 16px !important;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12) !important;
+    border: none !important;
+    padding: 10px !important;
 }
 
 .header-resultado {
-    justify-content: center !important;
-    text-align: center !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px;
+}
+
+.icono-resultado {
+    font-size: 48px !important;
+    height: 48px !important;
+    width: 48px !important;
 }
 
 .titulo-resultado {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 22px !important;
-    font-weight: 500 !important;
-    color: #333;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: #2c3e50;
+}
+
+.caja-dato {
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #edf2f7;
+}
+
+.etiqueta {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #718096;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .puntos-conseguidos {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 20px !important;
-    color: #2e7d32 !important; /* Color verde éxito */
+    font-size: 28px !important;
+    color: #2e7d32 !important;
     font-weight: bold !important;
-    margin-bottom: 10px;
+    margin: 0 !important;
 }
 
 .respuestas-correctas {
-    font-family: 'Roboto', sans-serif !important;
-    font-size: 18px !important;
-    color: #1565c0 !important; /* Color azul informativo */
-    font-weight: normal !important;
+    font-size: 24px !important;
+    color: #1565c0 !important;
+    font-weight: bold !important;
+    margin: 0 !important;
 }
 
 .contenedor-acciones {
     justify-content: center !important;
     display: flex !important;
-    margin-top: 15px !important;
+    gap: 15px;
+    margin-top: 20px !important;
+    padding-bottom: 15px !important;
 }
 
 /* --- BOTONES --- */
-.boton-enviar, .boton-imprimir {
-    font-family: 'Roboto', sans-serif !important;
+.boton-enviar {
+    padding: 12px 32px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+}
+
+.boton-accion-res {
     padding: 10px 24px !important;
     font-size: 15px !important;
+    border-radius: 8px !important;
 }
 
 /* --- UTILIDADES --- */
-.p20 {
-    padding: 20px !important;
-}
-.mt20 {
-    margin-top: 20px !important;
-}
-.mt10 {
-    margin-top: 10px !important;
-}
-.mb20 {
-    margin-bottom: 20px !important;
-}
+.mt20 { margin-top: 20px !important; }
+.mb20 { margin-bottom: 20px !important; }

@@ -1,12 +1,29 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row mt20">
-            <div class="col-md-6 offset-md-3 text-center">
-                <h1>Bienvenido al portal de examenes</h1>
-                <button mat-raised-button >Inicio</button>
-            </div>
-        </div>
-    </div>
+<div class="bootstrap-wrapper" style="display: flex; justify-content: center; align-items: center; min-height: 80vh; width: 100%; padding: 20px;">
+  
+  <mat-card class="home-card" style="max-width: 500px; width: 100%; padding: 40px; text-center: center;">
+    <mat-card-content class="text-center">
+      
+      <div class="home-icon-circle mb-4 mx-auto">
+        <mat-icon>school</mat-icon>
+      </div>
+
+      <h1 class="home-title mb-3">¡Bienvenido al Portal de Exámenes!</h1>
+      <p class="home-description mb-5">
+        Accede a tus evaluaciones disponibles, mide tus habilidades en tiempo real y gestiona tus evaluaciones desde un solo lugar.
+      </p>
+
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button 
+                color="primary" 
+                routerLink="/user-dashboard/0" 
+                class="btn-inicio-custom py-2" 
+                style="width: 200px; font-weight: 500; font-size: 1.1rem;">
+          <mat-icon class="me-2">play_lesson</mat-icon>
+          Ingresar al Campus
+        </button>
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
 </div>

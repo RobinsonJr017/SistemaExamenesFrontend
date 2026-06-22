@@ -9,10 +9,13 @@ import { CommonModule } from '@angular/common'; // Requerido para *ngFor
 import { MatCardModule } from '@angular/material/card'; // Requerido para mat-card
 import { FormsModule } from '@angular/forms'; //Para usar ngMOdel
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-start',
-  imports: [NgIf, MatDivider, MatButton, CommonModule, MatCardModule, FormsModule, MatProgressSpinnerModule, RouterLink],
+  imports: [NgIf, MatDivider, MatButton, CommonModule, MatCardModule, 
+    FormsModule, MatProgressSpinnerModule, RouterLink, MatRadioModule, MatIconModule],
   templateUrl: './start.component.html',
   styleUrl: './start.component.css'
 })
@@ -26,7 +29,7 @@ export class StartComponent implements OnInit{
 
   esEnviado = false;
   timer:any;
-
+  intervaloId:any; // <-- Agrega esta línea para guardar la ID del relo
   constructor(
     private LocationSt:LocationStrategy,
     private route:ActivatedRoute,
@@ -63,15 +66,15 @@ export class StartComponent implements OnInit{
   }
 
   iniciarTemporizador(){
-    let t = window.setInterval(() => {
-      if(this.timer <= 0){
-        clearInterval(t); // Primero limpiamos el intervalo para frenar el reloj
-        this.evaluarExamen(); // Luego evaluamos
-      } else {
-        this.timer --;
-      }
-    }, 1000)
-  }
+  this.intervaloId = window.setInterval(() => { // <-- Cambiamos 'let t' por 'this.intervaloId'
+    if(this.timer <= 0){
+      clearInterval(this.intervaloId); // <-- Limpiamos con la variable de la clase
+      this.evaluarExamen(); 
+    } else {
+      this.timer --;
+    }
+  }, 1000)
+}
 
   prevenirElBotonDeRetroceso(){
     history.pushState(null, null!,location.href);
@@ -95,19 +98,38 @@ export class StartComponent implements OnInit{
   }
 
   evaluarExamen(){
-    this.preguntaService.evaluarExamen(this.preguntas).subscribe(
-      (data:any) => {
-        console.log(data);
-        this.puntosConseguidos = data.puntosMaximos;
-        this.respuestasCorrectas = data.respuestasCorrectas; // Validado con el backend corregido
-        this.intentos = data.intentos;
-        this.esEnviado = true;
-      },
-      (error) => {
-        console.log(error);
-        Swal.fire('Error', 'No se pudo procesar la evaluación del examen', 'error');
+  if(this.intervaloId){
+    clearInterval(this.intervaloId); // Frena el reloj
+  }
+
+  this.preguntaService.evaluarExamen(this.preguntas).subscribe(
+    (data:any) => {
+      console.log("Respuesta del Backend:", data);
+      
+      this.puntosConseguidos = data.puntosMaximos;
+      this.intentos = data.intentos;
+      this.esEnviado = true;
+
+      // --- SOLUCIÓN DE RESPALDO INFALIBLE ---
+      // Si el backend trae el dato correcto lo usa, sino, lo calcula el Front-end para asegurar
+      if (data.respuestasCorrectas !== undefined && data.respuestasCorrectas !== null && data.respuestasCorrectas > 0) {
+        this.respuestasCorrectas = data.respuestasCorrectas;
+      } else {
+        // Respaldo: Calculamos las respuestas correctas comparando lo que respondió el usuario
+        this.respuestasCorrectas = 0;
+        this.preguntas.forEach((p: any) => {
+          if (p.respuestaDada === p.respuesta) {
+            this.respuestasCorrectas++;
+          }
+        });
       }
-    )
+      // --------------------------------------
+    },
+    (error) => {
+      console.log(error);
+      Swal.fire('Error', 'No se pudo procesar la evaluación del examen', 'error');
+    }
+  )
   
     /*this.esEnviado = true;
     this.preguntas.forEach((p:any) => {
